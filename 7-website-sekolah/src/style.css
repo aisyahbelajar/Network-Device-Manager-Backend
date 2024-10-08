@@ -1,0 +1,126 @@
+.navbar {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  align-items: center;
+  background-color: F0EFFF;
+}
+
+header nav a {
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+header .icons #menu-bars {
+  display: none;
+}
+
+.home {
+  padding: 0;
+}
+
+.home .box {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-size: cover;
+  background-position: center; /* Avoid using !important if possible */
+  padding: 2rem 9%;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease; /* Consider adjusting duration */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 1024px) {
+  /* Desktop */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* Adjust gap as needed */
+  }
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 1rem 2rem;
+  }
+
+  header .icons #menu-bars {
+    display: inline-block;
+  }
+
+  header nav {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header nav.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header nav a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background: var(--red);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Adjust gap as needed */
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; /* Adjust gap as needed */
+  }
+}
+
+@media (max-width: 468px) {
+  .profil-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .profil-content .flex {
+    flex-direction: column;
+    gap: 0; /* Adjust gap as per your need */
+  }
+  .profil-content .this {
+    width: 100%;
+    padding-left: 0; /* Remove padding to align content properly */
+    padding-right: 0;
+  }
+}
